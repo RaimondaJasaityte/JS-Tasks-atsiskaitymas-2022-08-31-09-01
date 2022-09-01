@@ -1,7 +1,7 @@
 /* ------------------------------ TASK 6 -----------------------------------
 Turimas "users" masyvas. 
 
-Parašykite funckijas, kurios atlikas nurodytas užduotis:
+Parašykite funkcijas, kurios atlikas nurodytas užduotis:
 1. funkcija "getUserAverageAge" - kaip argumentą priims masyvą ir duoto masyvo 
 atveju grąžins visų "users" amžiaus visurkį kaip skaičių.
 2. funkcija "getUsersNames" -  kaip argumentą priims masyvą ir duoto masyvo 
@@ -19,3 +19,14 @@ const users = [
   { id: '8', name: 'Simon Peterson', age: 30 },
   { id: '9', name: 'Daniel Cane', age: 51 },
 ];
+
+function getUserAverageAge (array) {
+  return array.reduce((total, next) => total + next.age, 0) / array.length;
+}
+
+console.log(Math.round(getUserAverageAge(users)*10)/10)
+
+function getUsersNames(getName) {
+  return getName.map((person) => person.name);
+}
+console.log(getUsersNames(users))

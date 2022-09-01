@@ -8,3 +8,21 @@ pamatyti jo pateikto svorio kovertavimą į:
 Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
+
+let svarai = document.getElementById("svarai");
+let gramai = document.getElementById("gramai");
+let uncijos = document.getElementById("uncijos");
+let form = document.querySelector("form");
+
+form.addEventListener("submit", converter); 
+
+function converter(e) {
+    e.preventDefault()
+    let inputVal = document.getElementById("search").value;
+    let svaras = inputVal * 2.2046;
+    let gramas = inputVal / 0.0010000;
+    let uncija = inputVal * 35.274; 
+    svarai.textContent = svaras;
+    gramai.textContent = gramas;
+    uncijos.textContent = uncija;
+}
